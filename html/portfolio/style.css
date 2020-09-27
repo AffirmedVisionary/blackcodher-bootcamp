@@ -34,6 +34,9 @@ body, html {
     background-color: black;
     margin-left: auto;
     margin-right: auto;
+    /* z-index is like sending object to front or forward in layers */
+    z-index: 300;
+    height: 4em;
   }
   
   /* Navbar links */
@@ -42,13 +45,13 @@ body, html {
     display: block;
     color: black;
     text-align: center;
-    padding: 14px;
     text-decoration: none;
+    height: 1em
   }
   
   /* Page content */
   .content {
-    padding: 16px;
+    padding: 5px;
   }
   
   /* The sticky class is added to the navbar with JS when it reaches its scroll position */
