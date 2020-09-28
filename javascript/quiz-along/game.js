@@ -10,7 +10,7 @@ let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
-let availableQuesions = [];
+let availableQuestions = [];
 
 // was hardcoded or written out here now we are using fetch from the json file but will eventually use an api
 // when using fetch, or anything that returns a promise a catch method for errors needs to be added too
@@ -55,15 +55,15 @@ const MAX_QUESTIONS = 10;
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    availableQuesions = [...questions];
-  //  console.log(availableQuesions)
+    availableQuestions = [...questions];
+  //  console.log(availableQuestions)
     getNewQuestion();
     game.classList.remove("hidden")
     loader.classList.add("hidden")
 };
 
 getNewQuestion = () => {
-    if(availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS){
+    if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
         localStorage.setItem('mostRecentScore', score);
         //go to end page when questions run out
         return window.location.assign("/end.html");
@@ -76,8 +76,8 @@ getNewQuestion = () => {
 // console.log((questionCounter / MAX_QUESTIONS)*100);
         progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
-        const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-        currentQuestion = availableQuesions[questionIndex];
+        const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+        currentQuestion = availableQuestions[questionIndex];
         question.innerText = currentQuestion.question;
     
         choices.forEach((choice) => {
@@ -85,7 +85,7 @@ getNewQuestion = () => {
             choice.innerText = currentQuestion['choice' + number];
         });
     
-        availableQuesions.splice(questionIndex, 1);
+        availableQuestions.splice(questionIndex, 1);
         acceptingAnswers = true;
 };
 
