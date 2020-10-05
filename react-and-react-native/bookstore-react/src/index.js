@@ -20,7 +20,7 @@ const element =
     <p>{listPrice}</p>
     </div>
       )
-})}
+})};
   {/* <h1 id={id}>{title} = {formatter.format(amount)}</h1> */}
   </Fragment>;
 ReactDOM.render(element,document.getElementById('root'));
