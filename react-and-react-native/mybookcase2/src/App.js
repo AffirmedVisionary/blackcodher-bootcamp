@@ -1,17 +1,44 @@
 import React, { useState } from 'react';
-import Book from './components/Book';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/Header';
+import BookList from './components/BookList';
 import data from './models/books.json';
+import About from './pages/About'
 // import logo from './logo.svg';
 // import './App.css';
 
 const App = (props) => {
-  const [books] = useState(data);
+  const [books, setBooks] = useState(data);
+  
+  function addBook (title, id) {
+    const newBookList = books.filter(book => book.id !== id);
+    setBooks(newBookList)
+  console.log(`The Book ${title} with the id of ${id} was clicked.`);
+ }
   return (
-    <div className="App">
-      {books.map(book => <Book key={book.id} book={book}/>)}
-    </div>
-  );
-}
+    <>
+    <Router>
+      <Route exact path="/" render= {() => (
+        <React.Fragment>
+          <Header />
+          <BookList books={books} addBook={addBook} />
+        </React.Fragment>
+      )} />
+            <Route exact path="/pages/About" render= {() => (
+        <React.Fragment>
+          <Header /> 
+          <About />
+        </React.Fragment>
+      )} />
+            <Route exact path="/bookcase" render= {() => (
+        <React.Fragment>
+          <Header />
+        </React.Fragment>
+      )} />
+    </Router>
+    </>
+  )
+ }
 
 // function App() {
 //   return (
