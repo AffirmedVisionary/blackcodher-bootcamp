@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build -e react-and-react-native/mybookcase2/public"
   },
   "eslintConfig": {
     "extends": "react-app"
