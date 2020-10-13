@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/css/main.1c91e437.chunk.css",
+    "main.js": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/js/main.c362fb69.chunk.js",
+    "main.js.map": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/js/main.c362fb69.chunk.js.map",
+    "runtime-main.js": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/js/runtime-main.bd50c428.js",
+    "runtime-main.js.map": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/js/runtime-main.bd50c428.js.map",
+    "static/js/2.8b982c36.chunk.js": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/js/2.8b982c36.chunk.js",
+    "static/js/2.8b982c36.chunk.js.map": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/js/2.8b982c36.chunk.js.map",
+    "index.html": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/index.html",
+    "precache-manifest.ab6f1f665d295e7c7da1406e9afc7f95.js": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/precache-manifest.ab6f1f665d295e7c7da1406e9afc7f95.js",
+    "service-worker.js": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/service-worker.js",
+    "static/css/main.1c91e437.chunk.css.map": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/css/main.1c91e437.chunk.css.map",
+    "static/js/2.8b982c36.chunk.js.LICENSE.txt": "/blackcodher-bootcamp/react-and-react-native/mybookcase2/static/js/2.8b982c36.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd50c428.js",
+    "static/js/2.8b982c36.chunk.js",
+    "static/css/main.1c91e437.chunk.css",
+    "static/js/main.c362fb69.chunk.js"
+  ]
+}
