@@ -133,3 +133,11 @@ h4 {
   input::placeholder {
     color: #aaa;
   }
+
+  footer {
+    text-align: center;
+  }
+
+  .projectLinks {
+    padding: 2px;
+  }
