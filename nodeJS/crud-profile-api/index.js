@@ -32,12 +32,21 @@ app.get('/', function (_, res) {
 });
 
 // //GET /api/profiles
-// app.get(rootUrl, (req, res) => {
-// });
+app.get(rootUrl, (req, res) => {
+    res.status(200).json({
+        status: "success",
+        data: profiles
+    })
+});
 
 // //GET /api/profiles/:id
-// app.get(`${rootUrl}/:id`, (req, res) => {
-// });
+app.get(`${rootUrl}/:id`, (req, res) => {
+    let chosenProfile = profiles["profile" + req.params.id]
+
+    // console.log(profiles.id),
+    // console.log(req.params.id)
+    console.log(chosenProfile)
+});
 
 // //POST /api/profiles
 // app.post(rootUrl, (req, res) => {
@@ -57,6 +66,7 @@ app.get('/', function (_, res) {
 
 app.listen(port, function () {
     console.log(`Node server is running... http://localhost:${port}`);
+    // console.log(profiles)
 });
 
 module.exports = app;
