@@ -22,7 +22,7 @@ const affirmations = [
   "I am a css pro"
 ]
 
-// routes (include a banana route)
+// routes or endpoints
 
 app.get('/', (req, res) => {
   res.json({ message: 'Divination, Motivation, Transformation, My name is Charlene Grant and I am the Affirmed Visionary!' })
