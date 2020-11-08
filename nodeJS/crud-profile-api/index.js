@@ -43,9 +43,17 @@ app.get(rootUrl, (req, res) => {
 app.get(`${rootUrl}/:id`, (req, res) => {
     let chosenProfile = profiles["profile" + req.params.id]
 
-    // console.log(profiles.id),
-    // console.log(req.params.id)
     console.log(chosenProfile)
+    if (chosenProfile) {
+        res.json({
+            status: "Success",
+            data: chosenProfile
+        })
+    } else {
+        res.status(404).json({
+            message: "Could not find profile"
+        })
+    }
 });
 
 // //POST /api/profiles
