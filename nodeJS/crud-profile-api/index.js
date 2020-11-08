@@ -41,7 +41,7 @@ app.get(rootUrl, (req, res) => {
 
 // //GET /api/profiles/:id
 app.get(`${rootUrl}/:id`, (req, res) => {
-    let chosenProfile = profiles["profile" + req.params.id]
+    let chosenProfile = profiles[req.params.id]
 
     console.log(chosenProfile)
     if (chosenProfile) {
@@ -57,8 +57,22 @@ app.get(`${rootUrl}/:id`, (req, res) => {
 });
 
 // //POST /api/profiles
-// app.post(rootUrl, (req, res) => {
-// });
+app.post(rootUrl, (req, res) => {
+
+    const existingIds = Object.keys(profiles)
+    const largestKey = Math.max(...existingIds)
+
+    const newKey = largestKey + 1
+
+    profiles[newKey] = req.body
+
+    res.status(201).json({
+        status: "Success",
+        message: `Created a profile with the id of ${newKey}`,
+        data: profiles
+    })
+    console.log(newKey)
+});
 
 // //PUT /api/profiles
 // app.put(`${rootUrl}/:id`, (req, res) => {
