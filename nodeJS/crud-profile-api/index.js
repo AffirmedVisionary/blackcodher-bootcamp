@@ -83,12 +83,19 @@ app.post(rootUrl, (req, res) => {
 // });
 
 // //DELETE /api/profiles/:id
-// app.delete(`${rootUrl}/:id`, (req, res) => {
-// });
+app.delete(`${rootUrl}/:id`, (req, res) => {
+
+    delete profiles[req.params.id]
+
+    res.status(200).json({
+        status: "Success",
+        message: `deleted profile ${req.params.id}`,
+        data: profiles
+    })
+});
 
 app.listen(port, function () {
     console.log(`Node server is running... http://localhost:${port}`);
-    // console.log(profiles)
 });
 
 module.exports = app;
