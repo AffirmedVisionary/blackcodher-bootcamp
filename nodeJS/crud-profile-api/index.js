@@ -23,6 +23,7 @@ function getProfiles() {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.raw());
+app.use(express.static('content'))
 
 //GET /
 app.get('/', function (_, res) {
