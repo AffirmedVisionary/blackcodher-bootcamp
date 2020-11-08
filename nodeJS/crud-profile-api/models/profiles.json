@@ -1,5 +1,5 @@
 {
-    "profile1": {
+    "1": {
         "firstname" : "Maya",
         "lastname" : "Angelou",
         "occupation" : [
@@ -10,7 +10,7 @@
         "country" : "United States",
         "bio" : "American poet, singer, memoirist, and civil rights activist. She published seven autobiographies, three books of essays, several books of poetry, and is credited with a list of plays, movies, and television shows spanning over 50 years"
     },
-    "profile2" : {
+    "2" : {
         "firstname" : "Toni",
         "lastname" : "Morrison",
         "occupation" : [
@@ -20,7 +20,7 @@
             "country" : "United States",
             "bio" : "American novelist, essayist, book editor, and college professor. Her first novel, The Bluest Eye, was published in 1970. The critically acclaimed Song of Solomon (1977) brought her national attention and won the National Book Critics Circle Award. In 1988, Morrison won the Pulitzer Prize for Beloved (1987); she gained worldwide recognition when she was awarded the Nobel Prize in Literature in 1993."
     },
-    "profile3" : {
+    "3" : {
             "firstname" : "Wangari",
             "lastname" : "Maathai",
             "occupation" : [
@@ -31,7 +31,7 @@
             "country" : "Kenya",
             "bio" : "Renowned Kenyan social, environmental and political activist and the first African woman to win the Nobel Prize. She was educated in the United States at Mount St. Scholastica (Benedictine College) and the University of Pittsburgh, as well as the University of Nairobi in Kenya"
     },
-    "profile4" : {
+    "4" : {
             "firstname" : "Zora",
             "lastname" : "Neale",
             "occupation" : [
