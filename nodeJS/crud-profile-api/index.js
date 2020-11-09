@@ -75,8 +75,16 @@ app.post(rootUrl, (req, res) => {
 });
 
 // //PUT /api/profiles
-// app.put(`${rootUrl}/:id`, (req, res) => {
-// });
+app.put(`${rootUrl}/:id`, (req, res) => {
+    const profileToUpdate = req.params.id
+
+    profiles[profileToUpdate] = req.body
+
+    res.status(200).json({
+        message: `user ${profileToUpdate} updated`,
+        data: profiles[profileToUpdate]
+    })
+});
 
 // //PATCH /api/profiles
 // app.patch(`${rootUrl}/:id`, (req, res) => {
