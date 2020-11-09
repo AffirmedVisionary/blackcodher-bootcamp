@@ -6,6 +6,7 @@ const path = require('path');
 const profileFile = __dirname + "\\" + "models\\profiles.json";
 const profiles = getProfiles(profileFile);
 const rootUrl = "/api/profiles";
+const cors = require('cors')
 
 const port = 5000;
 
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.raw());
 app.use(express.static('content'))
+app.use(cors())
 
 //GET /
 app.get('/', function (_, res) {
@@ -87,8 +89,19 @@ app.put(`${rootUrl}/:id`, (req, res) => {
 });
 
 // //PATCH /api/profiles
-// app.patch(`${rootUrl}/:id`, (req, res) => {
-// });
+app.patch(`${rootUrl}/:id`, (req, res) => {
+    const profileToUpdate = req.params.id
+
+    profiles[profileToUpdate] = {
+        ...profiles[profileToUpdate],
+        ...req.body
+    }
+
+    res.status(200).json({
+        message: "user updated",
+        data: profiles[profileToUpdate]
+    })
+});
 
 // //DELETE /api/profiles/:id
 app.delete(`${rootUrl}/:id`, (req, res) => {
