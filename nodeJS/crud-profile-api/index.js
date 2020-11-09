@@ -78,15 +78,21 @@ app.post(rootUrl, (req, res) => {
 
 // //PUT /api/profiles
 app.put(`${rootUrl}/:id`, (req, res) => {
-    const profileToUpdate = req.params.id
+    const profileToReplace = req.params.id
 
-    profiles[profileToUpdate] = req.body
 
-    res.status(200).json({
-        message: `user ${profileToUpdate} updated`,
-        data: profiles[profileToUpdate]
-    })
-});
+    if (profileToReplace) {
+        profiles[profileToReplace] = req.body
+        res.status(200).json({
+            message: `user ${profileToReplace} updated`,
+            data: profiles
+      })
+    } else {
+        res.status(404).json({
+            message: "Could not find profile"
+        })
+    }
+    });
 
 // //PATCH /api/profiles
 app.patch(`${rootUrl}/:id`, (req, res) => {
@@ -97,26 +103,39 @@ app.patch(`${rootUrl}/:id`, (req, res) => {
         ...req.body
     }
 
-    res.status(200).json({
-        message: "user updated",
-        data: profiles[profileToUpdate]
-    })
-});
+    if (profileToUpdate) {
+        res.status(200).json({
+            message: `user ${profileToUpdate} updated`,
+            data: profiles
+          })
+    } else {
+        res.status(404).json({
+            message: "Could not find profile"
+        })
+    }
+    });
 
 // //DELETE /api/profiles/:id
 app.delete(`${rootUrl}/:id`, (req, res) => {
 
-    delete profiles[req.params.id]
+    const profileToDelete = profiles[req.params.id]
 
-    res.status(200).json({
-        status: "Success",
-        message: `deleted profile ${req.params.id}`,
-        data: profiles
-    })
+    if (profileToDelete) {
+        delete profiles[req.params.id]
+        res.status(200).json({
+            status: "Success",
+            message: `deleted profile ${req.params.id}`,
+            data: profiles
+              })
+    } else {
+        res.status(404).json({
+            message: "Could not find profile"
+        })
+    }
 });
 
 app.listen(port, function () {
-    console.log(`Node server is running... http://localhost:${port}`);
+    console.log(`Node server is running... http://localhost:${port} #Winning`);
 });
 
 module.exports = app;
